@@ -1,8 +1,8 @@
 local M = {}
 M.__index = M
 
-M.margin_x = 10
-M.margin_y = 5
+M.margin_x = 20
+M.margin_y = 4
 M.border = "rounded"
 M.content = {
   "WOOF!",
