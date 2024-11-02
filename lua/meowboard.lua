@@ -18,6 +18,10 @@ function M.create_autocommands(autocommands)
   end
 end
 
+function M.toggle()
+  print("DUPA")
+end
+
 function M.setup(opts)
   opts = opts or M.default_config()
 
