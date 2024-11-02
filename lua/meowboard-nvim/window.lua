@@ -6,6 +6,7 @@ function M:new(width, height)
 
   instance.width = width or 100
   instance.height = height or 100
+  instance.border = "rounded"
 
   return instance
 end
