@@ -1,4 +1,4 @@
-local utils = require("lua.meowboard-nvim.utils")
+local utils = require("meowboard-nvim.utils")
 
 local M = {}
 
