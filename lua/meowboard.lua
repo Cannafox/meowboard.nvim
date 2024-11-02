@@ -18,8 +18,8 @@ function M:create_autocommands(autocommands)
   end
 end
 
-function M:toggle()
-  local window = require("core.window").setup()
+function M:toggle(opts)
+  local window = require("core.window").setup(opts)
 end
 
 function M:setup(opts)
