@@ -1,5 +1,5 @@
 -- local meowboard = require("meowboard")
 --
 return {
-  { "MeowboardToggle", require("meowboard").toggle(), { desc = { "test" } } }
+  { "MeowboardToggle", function() require("meowboard").toggle() end, { desc = { "test" } } }
 }
