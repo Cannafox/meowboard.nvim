@@ -4,8 +4,8 @@ M.__index = M
 function M:new(window)
   local instance = setmetatable({}, M)
 
-  instance.width = vim.api.nvim_win_get_width(window) or 100
-  instance.height = vim.api.nvim_win_get_height(window) or 100
+  instance.width = vim.api.nvim_win_get_width(window) or 10
+  instance.height = vim.api.nvim_win_get_height(window) or 10
   instance.border = "rounded"
 
   return instance
