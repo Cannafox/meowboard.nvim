@@ -4,8 +4,9 @@ local Window = require("meowboard-nvim.window")
 local M = {}
 
 function M.toggle(win)
-  vim.notify("toggle")
-  local window = Window:new(win)
+  local width = vim.api.nvim_win_get_width(win)
+  local height = vim.api.nvim_win_get_height(win)
+  local window = Window:new(width, height)
 
   window:show()
 end

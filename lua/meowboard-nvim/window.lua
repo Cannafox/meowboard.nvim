@@ -1,18 +1,23 @@
 local M = {}
 M.__index = M
 
-M.margin = 2
+M.margin_horizontal = 4
+M.margin_vertical = 2
+M.border = "rounded"
+M.content = {
+  "WOOF!",
+  "...and MEOW!"
+}
 
-function M:new(window)
+function M:new(width, height)
   local instance = setmetatable({}, M)
 
-  instance.width = vim.api.nvim_win_get_width(window) - 4*self.margin
-  instance.height = vim.api.nvim_win_get_height(window) - 2*self.margin
-  print(string.format("Width: %d, Height: %d", instance.width, instance.height))
-  instance.position_row = self.margin / 2
-  instance.position_col = self.margin
+  instance.width = width - self.margin_horizontal
+  instance.height = height - self.margin_vertical
 
-  instance.border = "rounded"
+  print(string.format("Width: %d, Height: %d", instance.width, instance.height))
+  instance.position_row = self.margin_vertical
+  instance.position_col = self.margin_horizontal
 
   instance.dashboard_buffer = vim.api.nvim_create_buf(false, true)
 
@@ -20,6 +25,8 @@ function M:new(window)
 end
 
 function M:show()
+  vim.api.nvim_buf_set_lines(self.dashboard_buffer, 0, -1, false, self.content)
+
   vim.api.nvim_open_win(
     self.dashboard_buffer, true, {
       relative='win',
