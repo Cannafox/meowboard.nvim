@@ -1,16 +1,17 @@
 local M = {}
+M.__index = M
 
-function M.toggle(buffer)
-  vim.api.nvim_open_win(buffer, false, {relative='win', row=10, col=10, width=40, height=40})
-  -- vim.api.nvim_set_current_buf(buffer)
+function M:new(width, height)
+  local instance = setmetatable({}, M)
+
+  instance.width = width or 100
+  instance.height = height or 100
+
+  return instance
 end
 
-function M.setup(opts)
-  opts = opts or {}
-
-  if opts.verbose then
-    M.logger = require("utils.logger").init(debug.getinfo(1,'S').source)
-  end
+function M:show()
+  vim.api.nvim_open_win(vim.api.nvim_get_current_buf(), true, {relative='win', width=self.width, height=self.height, col=0, row=0})
 end
 
 return M

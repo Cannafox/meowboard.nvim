@@ -1,9 +1,13 @@
 local utils = require("meowboard-nvim.utils")
+local Window = require("meowboard-nvim.window")
 
 local M = {}
 
 function M.toggle()
   vim.notify("toggle")
+  local window = Window:new(30, 20)
+
+  window:show()
 end
 
 function M.setup(opts)
