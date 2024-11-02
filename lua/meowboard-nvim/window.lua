@@ -12,8 +12,8 @@ M.content = {
 function M:new(width, height)
   local instance = setmetatable({}, M)
 
-  instance.width = math.floor(width / 2) -- - 2*self.margin_y
-  instance.height = math.floor(height / 2) -- - 2*self.margin_x
+  instance.width = width -- - 2*self.margin_y
+  instance.height = height -- - 2*self.margin_x
 
   print(string.format("Width: %d, Height: %d", instance.width, instance.height))
   instance.position_x = self.margin_x
