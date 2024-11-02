@@ -23,7 +23,7 @@ function M:toggle(opts)
 end
 
 function M:setup(opts)
-  opts = opts or M.get_default_config()
+  opts = opts or M:get_default_config()
 
   if opts.verbose then
     M.logger = require("utils.logger").init(debug.getinfo(1,'S').source)
