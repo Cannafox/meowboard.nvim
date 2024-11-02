@@ -26,7 +26,8 @@ function M:show()
       width=self.width,
       height=self.height,
       col=self.position_col, row=self.position_row,
-      border = self.border
+      border = self.border,
+      style = "minimal"
     })
 end
 
