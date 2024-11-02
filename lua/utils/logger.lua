@@ -13,7 +13,7 @@ function M.init(name)
 end
 
 ---Print line
---@function [parent=#geometry] print
+--@function [parent=#geometry] info
 --@param #string line
 --@return nil
 function M.info(line)
