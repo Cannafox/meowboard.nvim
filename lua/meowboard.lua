@@ -21,10 +21,8 @@ function M.create_autocommands(autocommands)
   end
 end
 
-function M.toggle(opts)
-  opts = opts or {}
-
-  local window = require("core.window").setup(opts)
+function M.toggle()
+  M.window.redraw()
 end
 
 function M.setup(opts)
@@ -39,6 +37,8 @@ function M.setup(opts)
 
   local default_keymaps = require("static.keymaps")
   M.set_keymaps(default_keymaps)
+
+  M.window = require("core.window").setup(opts)
 end
 
 return M

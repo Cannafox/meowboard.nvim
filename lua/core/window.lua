@@ -1,6 +1,8 @@
 local M = {}
 
 function M.redraw()
+  local buffer = vim.api.nvim_create_buf(false, true)
+  vim.api.nvim_set_current_buf(buffer)
 end
 
 function M.setup(opts)
