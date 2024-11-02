@@ -14,12 +14,14 @@ function M:new(window)
 
   instance.border = "rounded"
 
+  instance.dashboard_buffer = vim.api.nvim_create_buf(false, true)
+
   return instance
 end
 
 function M:show()
   vim.api.nvim_open_win(
-    vim.api.nvim_get_current_buf(), true, {
+    self.dashboard_buffer, true, {
       relative='win',
       width=self.width,
       height=self.height,
