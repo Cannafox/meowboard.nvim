@@ -23,7 +23,9 @@ function M.create_autocommands(autocommands)
 end
 
 function M.toggle()
-  window.toggle()
+  local buffer = vim.api.nvim_create_buf(false, true)
+
+  window.toggle(buffer)
 end
 
 function M.setup(opts)

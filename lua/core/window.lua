@@ -1,8 +1,6 @@
 local M = {}
 
-function M.toggle()
-  local buffer = vim.api.nvim_create_buf(false, true)
-
+function M.toggle(buffer)
   vim.api.nvim_open_win(buffer, false, {relative='win', row=10, col=10, width=40, height=40})
   -- vim.api.nvim_set_current_buf(buffer)
 end
