@@ -2,7 +2,7 @@ local M = {}
 M.__index = M
 
 M.margin_horizontal = 4
-M.margin_vertical = 2
+M.margin_vertical = 0
 M.border = "rounded"
 M.content = {
   "WOOF!",
@@ -12,8 +12,8 @@ M.content = {
 function M:new(width, height)
   local instance = setmetatable({}, M)
 
-  instance.width = width - 2*self.margin_horizontal
-  instance.height = height - 2*self.margin_vertical
+  instance.width = width -- - 2*self.margin_horizontal
+  instance.height = height -- - 2*self.margin_vertical
 
   print(string.format("Width: %d, Height: %d", instance.width, instance.height))
   instance.position_row = self.margin_horizontal
