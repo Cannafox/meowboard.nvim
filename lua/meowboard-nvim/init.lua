@@ -2,6 +2,10 @@ local utils = require("meowboard-nvim.utils")
 
 local M = {}
 
+function M.toggle()
+  vim.notify("toggle")
+end
+
 function M.setup(opts)
   local default_config = utils.get_default_config()
   local default_autocommands = utils.get_default_autocmds()

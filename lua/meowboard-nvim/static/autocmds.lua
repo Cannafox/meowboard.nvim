@@ -1,3 +1,5 @@
+local meowboard = require("meowboard-nvim")
+
 return {
-  { "MeowboardToggle", function() vim.notify("toggle") end, { desc = { "test" } } }
+  { "MeowboardToggle", function() meowboard.toggle() end, { desc = { "test" } } }
 }
