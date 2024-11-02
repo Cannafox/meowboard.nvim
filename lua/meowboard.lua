@@ -22,6 +22,8 @@ function M.create_autocommands(autocommands)
 end
 
 function M.toggle(opts)
+  opts = opts or {}
+
   local window = require("core.window").setup(opts)
 end
 
