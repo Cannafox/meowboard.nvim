@@ -34,15 +34,14 @@ end
 function M:show()
   vim.api.nvim_buf_set_lines(self.dashboard_buffer, 0, -1, false, self.content)
 
-  local ui = vim.api.nvim_list_uis()[0]
   vim.api.nvim_open_win(
     self.dashboard_buffer,
     true,
     vim.tbl_deep_extend('force', self.win_opts, {
       width=self.width,
       height=self.height,
-      col= (ui.width/2) - (self.width/2),-- self.position_x,
-      row= (ui.height/2) - (self.height/2),-- self.position_y,
+      col=self.position_x,
+      row=self.position_y,
     })
   )
 end
