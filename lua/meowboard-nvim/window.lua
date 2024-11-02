@@ -16,8 +16,8 @@ function M:new(width, height)
   instance.height = math.floor(height / 2) -- - 2*self.margin_x
 
   print(string.format("Width: %d, Height: %d", instance.width, instance.height))
-  instance.position_row = self.margin_x
-  instance.position_col = self.margin_y
+  instance.position_row = self.margin_y
+  instance.position_col = self.margin_x
 
   instance.dashboard_buffer = vim.api.nvim_create_buf(false, true)
 
