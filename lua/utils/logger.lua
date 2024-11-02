@@ -21,7 +21,7 @@ function M.print(line)
     "[%s] %s",
     M.name, line
   )
-  print(result)
+  vim.notify(result)
 end
 
 return M
