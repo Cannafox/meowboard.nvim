@@ -12,7 +12,14 @@ function M:new(width, height)
 end
 
 function M:show()
-  vim.api.nvim_open_win(vim.api.nvim_get_current_buf(), true, {relative='win', width=self.width, height=self.height, col=0, row=0})
+  vim.api.nvim_open_win(
+    vim.api.nvim_get_current_buf(), true, {
+      relative='win',
+      width=self.width,
+      height=self.height,
+      col=0, row=0,
+      border = self.border
+    })
 end
 
 return M
