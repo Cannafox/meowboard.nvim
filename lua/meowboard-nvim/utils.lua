@@ -12,4 +12,12 @@ function M.get_default_autocmds()
   return require("meowboard-nvim.static.autocmds")
 end
 
+function M.set_autocmd(autocmd)
+  vim.api.nvim_create_user_command(autocommand[1], autocommand[2], autocommand[3])
+end
+
+function M.set_keymap(keymap)
+  vim.keymap.set(keymap[1], keymap[2], keymap[3])
+end
+
 return M

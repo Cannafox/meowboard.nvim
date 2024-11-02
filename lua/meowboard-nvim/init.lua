@@ -10,11 +10,11 @@ function M.setup(opts)
   opts = opts or default_config
 
   for _, autocommand in ipairs(default_autocommands) do
-    vim.api.nvim_create_user_command(autocommand[1], autocommand[2], autocommand[3])
+    utils.set_autocmd(autocommand)
   end
 
   for _, keymap in ipairs(default_keymaps) do
-    vim.keymap.set(keymap[1], keymap[2], keymap[3])
+    utils.set_keymap(keymap)
   end
 end
 
