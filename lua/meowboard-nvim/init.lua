@@ -5,7 +5,7 @@ local M = {}
 
 function M.toggle()
   vim.notify("toggle")
-  local window = Window:new(30, 20)
+  local window = Window:new(10, 100)
 
   window:show()
 end
