@@ -1,7 +1,7 @@
 local M = {}
 M.__index = M
 
-M.margin_x = 0
+M.margin_x = 10
 M.margin_y = 5
 M.border = "rounded"
 M.content = {
