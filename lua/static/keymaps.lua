@@ -1,3 +1,3 @@
 return {
-  {"n", ":TestBoard", function() print("test") end, desc = "chuj"},
+  {"n", "<leader>m", function() print("test") end, desc = "chuj"},
 }
