@@ -9,14 +9,14 @@ local M = {}
 function M.init(name)
   M.name = name
 
-  M.print("Initialized!")
+  M.info("Initialized!")
 end
 
 ---Print line
 --@function [parent=#geometry] print
 --@param #string line
 --@return nil
-function M.print(line)
+function M.info(line)
   local result = string.format(
     "[%s] %s",
     M.name, line

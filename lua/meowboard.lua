@@ -12,12 +12,21 @@ function M.set_keymaps(keymaps)
   end
 end
 
+function M.create_autocommands(autocommands)
+  for _, autocommand in ipairs(autocommands) do
+    vim.api.nvim_create_user_command(autocommand[1], autocommand[2], autocommand[3])
+  end
+end
+
 function M.setup(opts)
   opts = opts or M.default_config()
 
   if opts.verbose then
     M.logger = require("utils.logger").init(debug.getinfo(1,'S').source)
   end
+
+  local default_autocommands = require("static.autocmds")
+  M.create_autocommands(default_autocommands)
 
   local default_keymaps = require("static.keymaps")
   M.set_keymaps(default_keymaps)
