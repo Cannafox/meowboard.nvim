@@ -3,6 +3,12 @@ M.__index = M
 
 M.margin_x = 20
 M.margin_y = 4
+M.win_opts = {
+  relative='editor',
+  border = "rounded",
+  style = "minimal",
+  anchor = "NW",
+}
 M.border = "rounded"
 M.content = {
   "WOOF!",
@@ -28,15 +34,17 @@ end
 function M:show()
   vim.api.nvim_buf_set_lines(self.dashboard_buffer, 0, -1, false, self.content)
 
+  local ui = vim.api.nvim_list_uis()[0]
   vim.api.nvim_open_win(
-    self.dashboard_buffer, true, {
-      relative='win',
+    self.dashboard_buffer,
+    true,
+    vim.tbl_deep_extend('force', self.win_opts, {
       width=self.width,
       height=self.height,
-      col=self.position_x, row=self.position_y,
-      border = self.border,
-      style = "minimal"
+      col= (ui.width/2) - (self.width/2),-- self.position_x,
+      row= (ui.height/2) - (self.height/2),-- self.position_y,
     })
+  )
 end
 
 return M
