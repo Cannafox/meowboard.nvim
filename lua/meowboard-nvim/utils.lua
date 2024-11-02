@@ -13,7 +13,7 @@ function M.get_default_autocmds()
 end
 
 function M.set_autocmd(autocmd)
-  vim.api.nvim_create_user_command(autocommand[1], autocommand[2], autocommand[3])
+  vim.api.nvim_create_user_command(autocmd[1], autocmd[2], autocmd[3])
 end
 
 function M.set_keymap(keymap)
