@@ -23,7 +23,7 @@ function M.create_autocommands(autocommands)
 end
 
 function M.toggle()
-  window.redraw()
+  window.toggle()
 end
 
 function M.setup(opts)
