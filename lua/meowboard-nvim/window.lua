@@ -9,7 +9,7 @@ function M:new(window)
   instance.width = vim.api.nvim_win_get_width(window) - 4*self.margin
   instance.height = vim.api.nvim_win_get_height(window) - 2*self.margin
   print(string.format("Width: %d, Height: %d", instance.width, instance.height))
-  instance.position_row = self.margin
+  instance.position_row = self.margin / 2
   instance.position_col = self.margin
 
   instance.border = "rounded"
