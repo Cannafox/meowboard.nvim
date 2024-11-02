@@ -1,4 +1,5 @@
 local M = {}
+local window = require("core.window")
 
 function M.get_default_config()
   if M.opts.verbose then
@@ -22,7 +23,7 @@ function M.create_autocommands(autocommands)
 end
 
 function M.toggle()
-  M.window.redraw()
+  window.redraw()
 end
 
 function M.setup(opts)
@@ -38,7 +39,7 @@ function M.setup(opts)
   local default_keymaps = require("static.keymaps")
   M.set_keymaps(default_keymaps)
 
-  M.window = require("core.window").setup(opts)
+  window.setup(opts)
 end
 
 return M
