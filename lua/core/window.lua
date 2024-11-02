@@ -1,7 +1,12 @@
 local M = {}
 
-function M:setup(opts)
-  local bufnr = vim.api.nvim_create_buf(false, true)
+function M.redraw()
+end
+
+function M.setup(opts)
+  if opts.verbose then
+    M.logger = require("utils.logger").init(debug.getinfo(1,'S').source)
+  end
 end
 
 return M
