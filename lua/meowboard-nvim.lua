@@ -2,14 +2,15 @@ local utils = require("meowboard-nvim.utils")
 local Window = require("meowboard-nvim.window")
 
 local M = {}
+M.__index = M
 
-function M.toggle()
+function M:toggle()
   local window = Window:new()
 
-  window:open()
+  window:toggle()
 end
 
-function M.setup(opts)
+function M:setup(opts)
   local default_config = utils.get_default_config()
   local default_autocommands = utils.get_default_autocmds()
   local default_keymaps = utils.get_default_keymaps()
