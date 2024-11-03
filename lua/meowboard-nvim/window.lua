@@ -13,7 +13,7 @@ function M:new()
     }),
     explorer_segment = window_segment:new({
       name = "explorer",
-      x = 20, y = (4+13)+5,
+      x = 20, y = (4+13)+10,
       width = 38, height = 23,
       content = {"TEST"}
     }),
