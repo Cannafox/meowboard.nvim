@@ -11,6 +11,12 @@ function M:new()
       width = 38, height = 13,
       content = self.get_logo_segment_content()
     }),
+    explorer_segment = window_segment:new({
+      name = "explorer",
+      x = 20, y = (4+13)+5,
+      width = 38, height = 23,
+      content = ""
+    }),
     title_segment = window_segment:new({
       name = "title",
       x = (20+38)+5, y = 4,
