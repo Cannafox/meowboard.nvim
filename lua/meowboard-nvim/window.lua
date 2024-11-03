@@ -20,7 +20,7 @@ function M:new()
     info_segment = window_segment:new({
       name = "info",
       x = (20+38)+5, y = 17,
-      width = 89, height = 3,
+      width = 89, height = 2,
       content = {"TEST"}
     }),
   }, M_mt)
