@@ -34,6 +34,7 @@ end
 
 function M:toggle()
   self.logo_segment:open()
+  self.explorer_segment:open()
   self.title_segment:open()
   self.info_segment:open()
 end
