@@ -1,15 +1,15 @@
 local M = {}
 local M_mt = { __index = M }
 
-function M:new(name, x, y, width, height, content)
+function M:new(opts)
   return setmetatable({
     win = nil,
-    name = name,
-    x = x,
-    y = y,
-    width = width,
-    height = height,
-    content = content,
+    name = opts.name,
+    x = opts.x,
+    y = opts.y,
+    width = opts.width,
+    height = opts.height,
+    content = opts.content,
     defaults = {
       relative = "editor",
       border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
