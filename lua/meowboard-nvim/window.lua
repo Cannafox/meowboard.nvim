@@ -14,8 +14,14 @@ function M:new()
     title_segment = window_segment:new({
       name = "title",
       x = (20+38)+5, y = 4,
-      width = 89, height = 13,
+      width = 89, height = 6,
       content = self.get_title_segment_content()
+    }),
+    info_segment = window_segment:new({
+      name = "info",
+      x = (20+38)+5, y = 12,
+      width = 89, height = 5,
+      content = ""
     }),
   }, M_mt)
 end
@@ -23,6 +29,7 @@ end
 function M:toggle()
   self.logo_segment:open()
   self.title_segment:open()
+  self.info_segment:open()
 end
 
 function M.get_title_segment_content()
