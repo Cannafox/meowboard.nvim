@@ -4,6 +4,7 @@ M.__index = M
 function M:new(name, x, y, width, height)
   local instance = setmetatable({}, M)
 
+  instance.win = nil
   instance.name = name
   instance.x = x
   instance.y = y
@@ -26,7 +27,7 @@ function M:get_default_win_opts()
 end
 
 function M:open()
-  local win = vim.api.nvim_open_win(
+  self.win = vim.api.nvim_open_win(
     self.buffer,
     true,
     vim.tbl_deep_extend('force', self.get_default_win_opts(self), {
