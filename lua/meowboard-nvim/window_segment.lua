@@ -27,8 +27,8 @@ function M:open()
     vim.tbl_deep_extend('force', self.defaults, {
       width=self.width,
       height=self.height,
-      col=self.position_x,
-      row=self.position_y,
+      col=self.x,
+      row=self.y,
     })
   )
 end
