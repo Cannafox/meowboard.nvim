@@ -52,7 +52,7 @@ end
 function M:get_default_win_opts()
   return {
     relative='editor',
-    border = "rounded",
+    border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
     style = "minimal",
     anchor = "NW",
   }
