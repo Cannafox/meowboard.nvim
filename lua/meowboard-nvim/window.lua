@@ -5,7 +5,8 @@ local M_mt = { __index = M }
 
 function M:new()
   return setmetatable({
-    logo_segment = window_segment:new("logo", 20, 4, 38, 13, self:get_logo_segment_content()),
+    logo_segment = window_segment:new("logo", 20, 4, 38, 13, self.get_logo_segment_content()),
+    title_segment = window_segment:new("title", (20+38)+2, 4, 113 - 120, 13, self.get_title_segment_content()),
   }, M_mt)
 end
 
