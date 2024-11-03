@@ -1,9 +1,19 @@
 local window_segment = require("meowboard-nvim.window_segment")
 
 local M = {}
-M.__index = M
+local M_mt = { __index = M }
 
-function M:get_title_segment_content()
+function M:new()
+  return setmetatable({
+    logo_segment = window_segment:new("logo", 20, 4, 38, 13, self:get_logo_segment_content()),
+  }, M_mt)
+end
+
+function M:toggle()
+  self.logo_segment:open()
+end
+
+function M.get_title_segment_content()
   return {
     '                                                                                                                 ',
     '                                                                                                                 ',
@@ -19,7 +29,7 @@ function M:get_title_segment_content()
   }
 end
 
-function M:get_logo_segment_content()
+function M.get_logo_segment_content()
   return {
     '                                     ',
     '             ／＞-- フ               ',
@@ -33,19 +43,6 @@ function M:get_logo_segment_content()
     '   ＼二)                  じしˍ,)ノ  ',
     '                                     ',
   }
-end
-
-function M:new()
-  local instance = setmetatable({}, M)
-
-  instance.logo_segment = window_segment:new("logo", 20, 4, 38, 13)
-  instance.logo_segment:set_content(self.get_logo_segment_content(self))
-
-  return instance
-end
-
-function M:toggle()
-  self.logo_segment:open()
 end
 
 return M

@@ -1,25 +1,23 @@
 local M = {}
-M.__index = M
+local M_mt = { __index = M }
 
-function M:new(name, x, y, width, height)
-  local instance = setmetatable({}, M)
-
-  instance.win = nil
-  instance.name = name
-  instance.x = x
-  instance.y = y
-  instance.width = width
-  instance.height = height
-  instance.content = ""
-  instance.defaults = {
-    relative='editor',
-    border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
-    style = "minimal",
-    anchor = "NW",
-  }
-  instance.buffer = vim.api.nvim_create_buf(false, true)
-
-  return instance
+function M:new(name, x, y, width, height, content)
+  return setmetatable({
+    win = nil,
+    name = name,
+    x = x,
+    y = y,
+    width = width,
+    height = height,
+    content = content,
+    defaults = {
+      relative = "editor",
+      border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
+      style = "minimal",
+      anchor = "NW",
+    },
+    buffer = vim.api.nvim_create_buf(false, true),
+  }, M_mt)
 end
 
 function M:open()
