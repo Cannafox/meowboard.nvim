@@ -14,13 +14,13 @@ function M:new()
     title_segment = window_segment:new({
       name = "title",
       x = (20+38)+5, y = 4,
-      width = 89, height = 10,
+      width = 89, height = 11,
       content = self.get_title_segment_content()
     }),
     info_segment = window_segment:new({
       name = "info",
-      x = (20+38)+5, y = 16,
-      width = 89, height = 4,
+      x = (20+38)+5, y = 17,
+      width = 89, height = 3,
       content = {"TEST"}
     }),
   }, M_mt)
