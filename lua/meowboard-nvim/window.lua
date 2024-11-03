@@ -15,7 +15,7 @@ function M:new()
       name = "explorer",
       x = 20, y = (4+13)+5,
       width = 38, height = 23,
-      content = ""
+      content = {"TEST"}
     }),
     title_segment = window_segment:new({
       name = "title",
