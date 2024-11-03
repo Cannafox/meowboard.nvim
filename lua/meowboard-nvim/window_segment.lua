@@ -11,34 +11,28 @@ function M:new(name, x, y, width, height)
   instance.width = width
   instance.height = height
   instance.content = ""
-
-  instance.buffer = vim.api.nvim_create_buf(false, true)
-
-  return instance
-end
-
-function M:get_default_win_opts()
-  return {
+  instance.defaults = {
     relative='editor',
     border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
     style = "minimal",
     anchor = "NW",
   }
+  instance.buffer = vim.api.nvim_create_buf(false, true)
+
+  return instance
 end
 
 function M:open()
   self.win = vim.api.nvim_open_win(
     self.buffer,
     true,
-    vim.tbl_deep_extend('force', self.get_default_win_opts(self), {
+    vim.tbl_deep_extend('force', self.defaults, {
       width=self.width,
       height=self.height,
       col=self.position_x,
       row=self.position_y,
     })
   )
-
-  return win
 end
 
 function M:set_content(content)

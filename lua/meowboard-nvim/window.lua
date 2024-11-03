@@ -45,8 +45,7 @@ function M:new()
 end
 
 function M:toggle()
-  local logo_window_id = self.logo_segment:open()
-  print(logo_window_id)
+  self.logo_segment:open()
 end
 
 return M
