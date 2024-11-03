@@ -21,6 +21,8 @@ function M:new(opts)
 end
 
 function M:open()
+  vim.api.nvim_buf_set_lines(self.buffer, 0, -1, false, self.content)
+
   self.win = vim.api.nvim_open_win(
     self.buffer,
     true,
@@ -35,8 +37,6 @@ end
 
 function M:set_content(content)
   self.content = content
-
-  vim.api.nvim_buf_set_lines(self.buffer, 0, -1, false, content)
 end
 
 -- function M:clear()
